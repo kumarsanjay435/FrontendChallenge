@@ -1,0 +1,42 @@
+
+<div class="col-12" *ngIf="title != ''">
+  <div #titleContainer class="container">
+    <h1 #titleElement class="title">Time to {{ title }}</h1>
+  </div>
+</div>
+<div class="col-12" *ngIf="title == ''">
+  <div #titleContainer class="container">
+    <h1 #titleElement class="title">Oops! Event Missing</h1>
+</div>
+</div>
+<div class="col-12">
+  <h2 *ngIf="remainingTime" class="text-warning text-center">{{ remainingTime }}</h2>
+</div>
+<div class="col-12">
+  <div class="row">
+    <div class="col-md-6 col-lg-6 col-sm-12">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          class="form-control"
+          id="title"
+          type="text"
+          [(ngModel)]="title"
+          (ngModelChange)="onTitleChange()"
+        />
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+      <div class="form-group">
+        <label for="title">Date</label>
+        <input
+          class="form-control"
+          id="eventDate"
+          type="date"
+          [(ngModel)]="eventDate"
+          (ngModelChange)="onEventDateChange()"
+        />
+      </div>
+    </div>
+  </div>
+</div>
